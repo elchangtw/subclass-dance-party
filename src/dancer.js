@@ -17,9 +17,14 @@ makeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
+  this.top = top;
+  this.left = left;
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.lineup = function() {
-
-};
+/*
+$('.dancer').on('click', function(event) {
+  console.log('i selected a node');
+  //window.dancers[0].$node.css('background-color', 'red');
+});
+*/

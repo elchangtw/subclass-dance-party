@@ -29,6 +29,31 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancer.$node.on('mouseover', function(event) {
+      dancer.$node.css('border', '25px solid #886654');
+    });
+
+    dancer.$node.on('click', function(event) {
+      dancer.$node.css('border', '25px solid #adf542');
+
+      var distanceToNode = [];
+      var currentNodeTop = dancer.top;
+      var currentNodeLeft = dancer.left;
+      var minDistance = 800;
+      var minIndex;
+      for ( var i = 0; i < window.dancers.length; i++ ) {
+        var distance = Math.sqrt(Math.pow(window.dancers[i].top - currentNodeTop, 2) + Math.pow(window.dancers[i].left - currentNodeLeft, 2));
+        distanceToNode.push(distance);
+        if (distance < minDistance && distance !== 0) {
+          minDistance = distance;
+          minIndex = i;
+        }
+      }
+      window.dancers[minIndex].setPosition(dancer.top+20, dancer.left+20);
+      //console.log(distanceToNode);
+      //console.log(minIndex);
+    });
+
 
     window.dancers.push(dancer);
   });
@@ -50,6 +75,9 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancer.$node.on('mouseover', function(event) {
+      dancer.$node.css('background-color', '#886654');
+    });
 
     window.dancers.push(dancer);
   });
@@ -67,13 +95,16 @@ $(document).ready(function() {
     // dancer.$node.addClass("bouncy-dancer");
     // dancer.$node.css('margin-top', $("body").height() * Math.random());
     $('body').append(dancer.$node);
+    dancer.$node.on('mouseover', function(event) {
+      dancer.$node.css('background-color', '#886654');
+    });
 
     window.dancers.push(dancer);
   });
 
   $('.lineupButton').on('click', function(event) {
     console.log('lineup attemped');
-    for ( var i=0; i<window.dancers.length; i++ ) {
+    for ( var i = 0; i < window.dancers.length; i++ ) {
 
       /*
       var styleSettings = {
@@ -87,7 +118,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.lineupButton').on('mouseover', function(event) {
+  $('.dancer').on('click', function(event) {
     console.log('i selected a node');
     //window.dancers[0].$node.css('background-color', 'red');
   });
