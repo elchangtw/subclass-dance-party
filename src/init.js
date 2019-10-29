@@ -30,5 +30,45 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+
+
+  $('.addBouncyButton').on('click', function(event) {
+    console.log("hi")
+    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    // //dancer-maker-function-name
+
+    // // get the maker function for the kind of dancer we're supposed to make
+    // var dancerMakerFunction = window[dancerMakerFunctionName];
+
+    // // make a dancer with a random position
+
+    // var dancer = new dancerMakerFunction(
+    //   $("body").height() * Math.random(),
+    //   $("body").width() * Math.random(),
+    //   Math.random() * 1000
+    // );
+    // $('body').append(dancer.$node);
+
+  });
+
+  $('.addSlidingButton').on('click', function(event) {
+    console.log("hello")
+    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    // //dancer-maker-function-name
+
+    // // get the maker function for the kind of dancer we're supposed to make
+    // var dancerMakerFunction = window[dancerMakerFunctionName];
+
+    // // make a dancer with a random position
+
+    // var dancer = new dancerMakerFunction(
+    //   $("body").height() * Math.random(),
+    //   $("body").width() * Math.random(),
+    //   Math.random() * 1000
+    // );
+    // $('body').append(dancer.$node);
+
+  });
+
 });
 
