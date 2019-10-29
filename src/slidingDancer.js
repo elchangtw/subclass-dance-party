@@ -12,7 +12,6 @@ makeSlidingDancer.prototype.step = function() {
   this.$node.animate({
     top: $("body").height() * Math.random(),
     left: $("body").width() * Math.random()
-
   });
   this.$node.addClass("sliding-dancer");
 };

@@ -29,33 +29,21 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    window.dancers.push(dancer);
   });
 
 
   $('.addBouncyButton').on('click', function(event) {
-    console.log("hi")
-    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    //console.log("hi")
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
     // //dancer-maker-function-name
 
     // // get the maker function for the kind of dancer we're supposed to make
-    // var dancerMakerFunction = window[dancerMakerFunctionName];
+    var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // // make a dancer with a random position
 
-    // var dancer = new dancerMakerFunction(
-    //   $("body").height() * Math.random(),
-    //   $("body").width() * Math.random(),
-    //   Math.random() * 1000
-    // );
-    // $('body').append(dancer.$node);
-
-  });
-
-  $('.addSlidingButton').on('click', function(event) {
-    console.log("hello")
-
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-    var dancerMakerFunction = window[dancerMakerFunctionName];
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -63,6 +51,45 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
 
+    window.dancers.push(dancer);
+  });
+
+  $('.addSlidingButton').on('click', function(event) {
+    //console.log("hello")
+
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    var dancer = new dancerMakerFunction(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      1000 + Math.random() * 1000
+    );
+    // dancer.$node.addClass("bouncy-dancer");
+    // dancer.$node.css('margin-top', $("body").height() * Math.random());
+    $('body').append(dancer.$node);
+
+    window.dancers.push(dancer);
+  });
+
+  $('.lineupButton').on('click', function(event) {
+    console.log('lineup attemped');
+    for ( var i=0; i<window.dancers.length; i++ ) {
+
+      /*
+      var styleSettings = {
+        top: top,
+        left: left
+      };
+      this.$node.css(styleSettings);
+      */
+      window.dancers[i].setPosition(100);
+      window.dancers[i].$node.css('margin-top', "100px");
+    }
+  });
+
+  $('.lineupButton').on('mouseover', function(event) {
+    console.log('i selected a node');
+    //window.dancers[0].$node.css('background-color', 'red');
   });
 
 });
