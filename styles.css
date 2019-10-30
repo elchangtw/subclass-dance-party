@@ -7,12 +7,19 @@ body{
   background-color:#444;
   font-size: 18px;
   background-image: url("background.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 1100px 1000px;
-  font-family: Tahoma,Geneva,Kalimati,sans-serif;
+  background-position: center center;
+  background-size: 80vh 80wh;
+  /* font-family: Tahoma,Geneva,Kalimati,sans-serif; */
+  font-family: 'Staatliches', sans-serif;
+  font-size: 20px;
   color: rgb(22, 29, 29);
-  height: 80vh;
-  width: 80vw;
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  /* height: 1000px;
+  width: 1100px; */
 
 }
 body, a:link, a:visited, a:active{
@@ -21,6 +28,11 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton, .addSlidingButton, .addBouncyButton {
   padding:5px 12px;
   float:right;
+}
+.lineupButton {
+  padding:5px 12px;
+  float:right;
+  color: #aa9090
 }
 .topbar{
   height:32px;
@@ -32,14 +44,16 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:25px solid #689877;
+  border:25px solid #8da594;
   border-radius:25px;
   position:absolute;
+  box-shadow: 5px 5px rgba(0,0,0,0.3);
 }
 
 .sliding-dancer{
   border:0px;
   background-color:#7799c9;
+  background: conic-gradient( aqua, magenta, aqua);
   width: 50px;
   height: 50px;
   position:absolute;
@@ -55,7 +69,8 @@ body, a:link, a:visited, a:active{
     height: 50px;
     border:0px;
     border-radius: 50px;
-    background-color: #3673cf;
+    background: linear-gradient( #121355, #444);
+    /* background-color: #121355; */
     -webkit-animation: moveX 1.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
     -moz-animation: moveX 1.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
     -o-animation: moveX 1.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;

@@ -34,6 +34,7 @@ $(document).ready(function() {
     });
 
     dancer.$node.on('click', function(event) {
+      console.log('clicked ball');
       dancer.$node.css('border', '25px solid #adf542');
 
       var distanceToNode = [];
@@ -76,7 +77,8 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     dancer.$node.on('mouseover', function(event) {
-      dancer.$node.css('background-color', '#886654');
+      // dancer.$node.css('background-color', '#886654');
+      dancer.$node.css('background', 'conic-gradient(#001105, #001101, #001104)');
     });
 
     window.dancers.push(dancer);
@@ -96,7 +98,8 @@ $(document).ready(function() {
     // dancer.$node.css('margin-top', $("body").height() * Math.random());
     $('body').append(dancer.$node);
     dancer.$node.on('mouseover', function(event) {
-      dancer.$node.css('background-color', '#886654');
+      // dancer.$node.css('background-color', '#886654');
+      dancer.$node.css('background', 'conic-gradient(#444, #ccc, #444)');
     });
 
     window.dancers.push(dancer);
